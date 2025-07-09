@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Wellness Journal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #4a90e2;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #357ABD;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a90e2;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    button {
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #357ABD;
+    }
+
+    #smart-reply {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e7f3ff;
+      border-left: 5px solid #4a90e2;
+      border-radius: 5px;
+      font-style: italic;
+      color: #2c3e50;
+    }
+
+    #entry-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 30px;
+    }
+
+    #entry-list li {
+      background: #ffffff;
+      padding: 15px;
+      border-left: 4px solid #4a90e2;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Register Patient.html">Register Patient</a></li>
+      <li><a href="Appointments.html">Appointments</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="Wellness Journal.html" class="active">Journal</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Wellness Journal</h1>
+
+    <form id="journal-form">
+      <label for="entry-date">Tareekh:</label>
+      <input type="date" id="entry-date" required>
+
+      <label for="mood">Aaj ka mood:</label>
+      <select id="mood" required>
+        <option value="">--Select--</option>
+        <option>Happy</option>
+        <option>Okay</option>
+        <option>Anxious</option>
+        <option>Sad</option>
+        <option>Tired</option>
+        <option>Motivated</option>
+      </select>
+
+      <label for="entry">Kuch likhiye:</label>
+      <textarea id="entry" rows="4" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="smart-reply"></div>
+
+    <ul id="entry-list"></ul>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById("journal-form");
+    const list = document.getElementById("entry-list");
+    const replyBox = document.getElementById("smart-reply");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const date = document.getElementById("entry-date").value;
+      const mood = document.getElementById("mood").value;
+      const text = document.getElementById("entry").value;
+
+      const entry = document.createElement("li");
+      entry.innerHTML = `<strong>${date} – ${mood}</strong><br>${text}`;
+      list.prepend(entry);
+
+      let reply = "";
+
+      if (mood.includes("Happy")) {
+        reply = "Aap khush hain, yeh sunkar accha laga! Aapka din aise hi achha guzre. 😊";
+      } else if (mood.includes("Okay")) {
+        reply = "Thik lag raha hai, par agar kuch uljhan ho to likhna madadgar ho sakta hai.";
+      } else if (mood.includes("Anxious")) {
+        reply = "Aap thoda pareshan lag rahe hain. Gehri saans lein, aur zarurat ho to kisi se baat karein. 🌿";
+      } else if (mood.includes("Sad")) {
+        reply = "Udaasi ko express karna zaruri hai. Aap akele nahi hain. Hum aapke saath hain. 💙";
+      } else if (mood.includes("Tired")) {
+        reply = "Aap thake hue lag rahe hain. Aaram lena zaruri hai. Khud ka khayal rakhiye.";
+      } else if (mood.includes("Motivated")) {
+        reply = "Yeh motivation dekhkar accha laga! Aise hi bane rahiye 💪🔥";
+      } else {
+        reply = "Dhanyavaad apne vichar likhne ke liye.";
+      }
+
+      replyBox.textContent = reply;
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

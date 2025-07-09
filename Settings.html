@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings – Human-Centered & Friendly</title>
+  <link rel="stylesheet" href="Settings.css" />
+</head>
+<body>
+  <header>
+    <h1>Human-Centered & Friendly</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="main.html">🏠 HOME</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Register Patient.html">Register Patient</a></li>
+      <li><a href="Appointments.html">Appointments</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="Wellness Journal.html">Wellness Journal</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="settings">
+      <h2>Settings</h2>
+      <form onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="example@muzehealth.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91-xxxxxxxxxx">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+          <label for="reenter">Re-enter Password</label>
+          <input type="password" id="reenter" placeholder="Re-enter password">
+        </div>
+
+        <div class="form-group">
+          <label for="notifications">Notifications</label>
+          <select id="notifications">
+            <option value="on">Enable</option>
+            <option value="off">Disable</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="theme">Theme</label>
+          <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+
+        <button type="submit">Save Settings</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Human-Centered & Friendly</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const reenter = document.getElementById("reenter").value;
+
+      if (!name || !email || !password || !reenter) {
+        alert("All fields are required.");
+        return false;
+      }
+
+      if (password !== reenter) {
+        alert("Password is incorrect. Both fields must match.");
+        return false;
+      }
+
+      alert("Password matched. Settings saved successfully!");
+      return true;
+    }
+  </script>
+</body>
+</html>

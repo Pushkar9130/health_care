@@ -1,0 +1,110 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f9fdfb;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #a7c957;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  background-color: #fefae0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #283618;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #d4a373;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* Card Layout */
+.card {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  color: #386641;
+  margin-bottom: 15px;
+}
+
+/* Doctors */
+.doctor-card {
+  background: #f0f7f4;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #6a994e;
+  border-radius: 6px;
+}
+
+/* Footer */
+footer {
+  background: #6a994e;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}

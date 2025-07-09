@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Patient - Human-Centered & Friendly</title>
+  <link rel="stylesheet" href="Register Patient.css" />
+</head>
+<body>
+  <header>
+    <h1>Human-Centered & Friendly</h1>
+    
+  </header>
+  <nav>
+    <ul>
+       <li><a href="main.html">🏠 HOME</a></li>
+      <li><a href="dashboard.html">🎀Dashboard</a></li>
+      <li><a href="Register Patient.html">Register Patient</a></li>
+      <li><a href="Appointments.html">Appointments</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="Wellness Journal.html" class="active">Journal</a></li>
+    </ul>
+
+  <main class="container">
+    <li><a href="Register Patient.html" class="active">Register Patient</a></li>
+
+    <section class="form-section">
+      <h2>Register New Patient</h2>
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter full name" required >
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="">Select gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+<script>
+  function f(){
+    var a = document.getElementById("name").value;
+    console.write(a);
+  }
+</script>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter contact number" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" placeholder="Enter address" rows="3" required></textarea>
+
+        <label for="disease">Health Concern / Problem:</label>
+        <input type="text" id="disease" placeholder="e.g., Fever, Cold, Diabetes" required>
+
+        <button type="submit" onclick="f()">Register Patient</button>
+      </form>
+    </section>
+
+    <section class="image-section">
+      <img src="https://cdn.pixabay.com/photo/2017/08/06/00/08/people-2583390_960_720.jpg" alt="Doctor with patient">
+    </section>
+  </main>
+   <nav>
+  <!-- Existing nav links -->
+  <a href="dashboard.html">Dashboard</a>
+  <a href="Register Patient.html">Register Patient</a>.`
+  <a href="Appointments.html">Appointments</a>
+  <a href="doctor.html">Doctors</a>
+  <a href="Settings.html">Settings</a>
+  <a href="Wellness Journal.html">Journal</a>
+
+  <!-- ✅ Logout Button -->
+  <button onclick="logout()" class="logout-btn">Logout</button>
+</nav>
+<video width="1000" controls>
+  <source src="video2.html.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+  <footer>
+    <p>&copy; 2025Human-Centered & Friendly</p>
+  </footer>
+</body>
+</html>

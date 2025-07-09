@@ -1,0 +1,174 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f4f8fb;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: #005f73;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+  background-color: #0a9396;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #e9d8a6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #94d2bd;
+  color: #001219;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* Appointment Section */
+.appointment-section {
+  flex: 1;
+  min-width: 600px;
+}
+
+.appointment-section h2 {
+  color: #005f73;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #94d2bd;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+/* Table Design */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #e0fbfc;
+  color: #005f73;
+  font-weight: 600;
+}
+
+td {
+  font-size: 0.95rem;
+}
+
+tr:hover {
+  background-color: #f1fdfd;
+}
+
+/* Status Styling */
+td:last-child {
+  font-weight: bold;
+}
+
+td:last-child::before {
+  content: '● ';
+  color: #0a9396;
+}
+
+td:last-child:contains("Pending") {
+  color: #ca6702;
+}
+
+td:last-child:contains("Confirmed") {
+  color: #219653;
+}
+
+/* Image Section */
+.image-section {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #005f73;
+  color: #e9d8a6;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .appointment-section,
+  .image-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

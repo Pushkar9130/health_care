@@ -1,0 +1,117 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  color: #333;
+  padding-bottom: 40px;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #0a9396;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #e9d8a6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  color: #005f73;
+  font-size: 2rem;
+}
+
+/* Doctor Cards Container */
+.doctor-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Doctor Card Design */
+.doctor-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #94d2bd;
+}
+
+.doctor-card h2 {
+  color: #005f73;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.doctor-card p {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.doctor-card p strong {
+  color: #0a9396;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Doctors information</title>
+  <link rel="stylesheet" href="Doctors.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="main.html">🏠 HOME</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Register Patient.html">Register Patient</a></li>
+      <li><a href="Appointments.html">Appointments</a></li>
+      <li><a href="doctor.html">Doctors</a></li>
+      <li><a href="Settings.html">Doctors</a></li>
+             
+
+      <li><a href="Wellness Journal.html" class="active">Journal</a></li>
+    </ul>
+  </nav>
+  <h1>Top   Doctors</h1>
+  <div id="doctor-container" class="doctor-container"></div>
+  <script src="doctors.js"></script>
+  <script>
+    const container = document.getElementById('doctor-container');
+    doctors.forEach(doc => {
+      container.innerHTML += `
+        <div class="doctor-card">
+          <img src="${doc.photo}" alt="${doc.name}">
+          <h2>${doc.name}</h2>
+          <p><strong>Specialization:</strong> ${doc.specialization}</p>
+          <p><strong>Experience:</strong> ${doc.experience}</p>
+          <p><strong>Contact:</strong> ${doc.contact}</p>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
